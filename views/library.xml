@@ -5,8 +5,9 @@
             <field name="res_model">library.book</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="help" type="html" >
-                <p class=="oe_view_nocontent_create">First Book</p>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create first book
+                </p>
             </field>
         </record>
 
@@ -14,6 +15,6 @@
 
         <menuitem id="library_menu" name="Library" parent="main_library_menu"/>
 
-        <menuitem id="books_menu" menu="Books" parent="library_menu"/>
+        <menuitem id="books_menu" name="Books" parent="library_menu" action="book_list_action"/>
     </data>
 </odoo>
