@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="book_list_action">
+            <field name="name">Books</field>
+            <field name="res_model">library.book</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html" >
+                <p class=="oe_view_nocontent_create">First Book</p>
+            </field>
+        </record>
+
+        <menuitem id="main_library_menu" name="Library"/>
+
+        <menuitem id="library_menu" name="Library" parent="main_library_menu"/>
+
+        <menuitem id="books_menu" menu="Books" parent="library_menu"/>
+    </data>
+</odoo>
