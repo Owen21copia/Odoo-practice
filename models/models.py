@@ -8,6 +8,8 @@ class Book(models.Model):
     name = fields.Char(string="Title", required=True)
     description = fields.Text()
 
+
+
 class Shelf(models.Model):
     _name = 'library.shelf'
 

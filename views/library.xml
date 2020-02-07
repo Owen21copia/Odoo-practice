@@ -49,5 +49,29 @@
         <menuitem id="library_menu" name="Library" parent="main_library_menu"/>
 
         <menuitem id="books_menu" name="Books" parent="library_menu" action="book_list_action"/>
+
+        <record model="ir.ui.view" id="shelf_form_view">
+            <field name="name">shelf.form</field>
+            <field name="model">library.shelf</field>
+            <field name="arch" type="xml">
+                <form string="Shelves form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="spaces"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="shelf_list_action">
+            <field name="name">Shelves</field>
+            <field name="res_model">library.shelf</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="shelfs_menu" name="Shelves" parent="library_menu" action="shelf_list_action"/> -->
     </data>
 </odoo>
