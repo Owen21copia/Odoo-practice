@@ -54,7 +54,7 @@
             <field name="name">shelf.form</field>
             <field name="model">library.shelf</field>
             <field name="arch" type="xml">
-                <form string="Shelves form">
+                <form string="Shelf form">
                     <sheet>
                         <group>
                             <field name="name"/>
@@ -72,6 +72,6 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="shelfs_menu" name="Shelves" parent="library_menu" action="shelf_list_action"/> -->
+        <menuitem id="shelf_menu" name="Shelves" parent="library_menu" action="shelf_list_action"/>
     </data>
 </odoo>
