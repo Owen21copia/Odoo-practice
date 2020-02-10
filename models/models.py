@@ -7,7 +7,7 @@ class Book(models.Model):
 
     name = fields.Char(string="Title", required=True)
     description = fields.Text()
-    reader_id = fields.Many2one('res.readers', ondelete='set null', string="Reader", index=True )
+    reader_id = fields.Many2one('res.users', ondelete='set null', string="Reader", index=True )
 
 
 class Shelf(models.Model):
@@ -15,5 +15,5 @@ class Shelf(models.Model):
 
     name = fields.Char(string="Title", required=True)
     spaces = fields.Integer(string="Number of spaces")
-    manager_id = fields.Many2one('res.owner', string="Manager")
+    manager_id = fields.Many2one('res.partner', string="Manager")
     book_id = fields.Many2one('library.book', string="Book", ondelete="cascade", required=True)
