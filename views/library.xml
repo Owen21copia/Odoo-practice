@@ -14,8 +14,13 @@
                             <page string="Description">
                                 <field name="description"/>
                             </page>
-                            <page string="About">
-                                This is an example of a string
+                            <page string="Shelf">
+                                <field name="shelf_ids">
+                                    <tree string="Shelves">
+                                        <field name="name"/>
+                                        <field name="manager_id"/>
+                                    </tree>
+                                </field>
                             </page>
                         </notebook>
                     </sheet>
@@ -69,11 +74,28 @@
                 <form string="Shelf form">
                     <sheet>
                         <group>
-                            <field name="name"/>
-                            <field name="spaces"/>
+                            <group string="General">
+                                <field name="book_id"/>
+                                <field name="name"/>
+                                <field name="manager_id"/>
+                            </group>
+                            <group string="Schedule">
+                                <field name="spaces"/>
+                            </group>
                         </group>
                     </sheet>
                 </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="shelf_tree_view">
+            <field name="name">shelf.tree</field>
+            <field name="model">library.shelf</field>
+            <field name="arch" type="xml">
+                <tree string="SHelf tree">
+                    <field name="name"/>
+                    <field name="book_id"/>
+                </tree>
             </field>
         </record>
 

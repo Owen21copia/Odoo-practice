@@ -8,6 +8,7 @@ class Book(models.Model):
     name = fields.Char(string="Title", required=True)
     description = fields.Text()
     reader_id = fields.Many2one('res.users', ondelete='set null', string="Reader", index=True )
+    shelf_ids = fields.One2many('library.shelf', 'book_id', string="Shelf")
 
 
 class Shelf(models.Model):
