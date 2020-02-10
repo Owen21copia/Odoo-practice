@@ -8,6 +8,7 @@
                     <sheet>
                         <group>
                             <field name="name"/>
+                            <field name="reader_id"/>
                         </group>
                         <notebook>
                             <page string="Description">
@@ -30,6 +31,17 @@
                     <field name="name"/>
                     <field name="description"/>
                 </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="books_tree_view">
+            <field name="name">books.tree</field>
+            <field name="model">library.book</field>
+            <field name="arch" type="xml">
+                <tree string="Book tree">
+                    <field name="name"/>
+                    <field name="reader_id"/>
+                </tree>
             </field>
         </record>
 
