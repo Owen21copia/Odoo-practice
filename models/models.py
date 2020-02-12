@@ -28,6 +28,24 @@ class Shelf(models.Model):
             else:
                 r.remaining_spaces = (r.spaces - len(r.book_ids))
 
+    @api.onchange('spaces', 'book_ids')
+    def verify_spaces(self):
+        if self.spaces < 0:
+            return {
+                'warning': {
+                    'title': "Incorrect 'spaces' value",
+                    'message': "The number of spaces may not be negative",
+                },
+            }
+        if len(self.book_ids) > self.spaces:
+            return {
+                'warning': {
+                    'title': "Too many books",
+                    'message': "This shelf cannot occupy all these books",
+                },
+            }
+
+
 
 
     
