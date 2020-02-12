@@ -10,6 +10,11 @@ class Book(models.Model):
     reader_id = fields.Many2one('res.users', ondelete='set null', string="Reader", index=True )
     shelf_ids = fields.Many2one('library.shelf', string="Shelf", required=True)
 
+    _sql_constraints = [
+        ('name_description_check','CHECK(name != description)', 'The title of the book should not be the description'),
+        ('name_unique', 'UNIQUE(name)', 'The book title must be unique') ,
+    ]
+
 
 class Shelf(models.Model):
     _name = 'library.shelf'
