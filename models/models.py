@@ -17,5 +17,7 @@ class Shelf(models.Model):
     name = fields.Char(string="Name of shelf", required=True)
     spaces = fields.Integer(string="Number of spaces")
     manager_id = fields.Many2one('res.partner', string="Manager")
-    book_id = fields.Many2one('library.book', string="Book", ondelete="cascade", required=True)
-    novel_ids = fields.Many2many('res.partner', string="Additions")
+    book_ids = fields.One2many('library.book', 'shelf_ids', string="Book")
+    
+
+    

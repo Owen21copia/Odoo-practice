@@ -75,7 +75,7 @@
                     <sheet>
                         <group>
                             <group string="General">
-                                <field name="book_id"/>
+                            
                                 <field name="name"/>
                                 <field name="manager_id"/>
                             </group>
@@ -83,8 +83,8 @@
                                 <field name="spaces"/>
                             </group>
                         </group>
-                        <label for="novel_ids"/>
-                        <field name="novel_ids"/>
+                        <label for="book_ids"/>
+                        <field name="book_ids"/>
                     </sheet>
                 </form>
             </field>
@@ -94,9 +94,9 @@
             <field name="name">shelf.tree</field>
             <field name="model">library.shelf</field>
             <field name="arch" type="xml">
-                <tree string="SHelf tree">
+                <tree string="Shelf tree">
                     <field name="name"/>
-                    <field name="book_id"/>
+                
                 </tree>
             </field>
         </record>
