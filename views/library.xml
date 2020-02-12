@@ -81,6 +81,7 @@
                             </group>
                             <group string="Schedule">
                                 <field name="spaces"/>
+                                <field name="remaining_spaces"/>
                             </group>
                         </group>
                         <label for="book_ids"/>
@@ -96,7 +97,7 @@
             <field name="arch" type="xml">
                 <tree string="Shelf tree">
                     <field name="name"/>
-                
+                    <field name="remaining_spaces"/>
                 </tree>
             </field>
         </record>

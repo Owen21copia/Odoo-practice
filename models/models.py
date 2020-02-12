@@ -15,7 +15,7 @@ class Shelf(models.Model):
     _name = 'library.shelf'
 
     name = fields.Char(string="Name of shelf", required=True)
-    spaces = fields.Integer(string="Number of spaces")
+    spaces = fields.Integer(string="Number of spaces", required=True)
     manager_id = fields.Many2one('res.partner', string="Manager")
     book_ids = fields.One2many('library.book', 'shelf_ids', string="Book")
     remaining_spaces = fields.Integer(string="Remaining spaces", compute = 'rem_spaces')
@@ -23,10 +23,10 @@ class Shelf(models.Model):
     @api.depends('spaces' , 'book_ids')
     def rem_spaces(self):
         for r in self:
-            if not r.seats:
+            if not r.spaces:
                 r.remaining_spaces = 0
             else:
-                r.remaining_spaces = (spaces - len(book_ids))
+                r.remaining_spaces = (r.spaces - len(r.book_ids))
 
 
 
