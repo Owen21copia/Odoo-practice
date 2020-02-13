@@ -95,9 +95,9 @@
             <field name="name">shelf.tree</field>
             <field name="model">library.shelf</field>
             <field name="arch" type="xml">
-                <tree string="Shelf tree">
+                <tree string="Shelf tree" decoration-danger="remaining_spaces&lt;5" decoration-success="remaining_spaces&gt;15">
                     <field name="name"/>
-                    <field name="remaining_spaces"/>
+                    <field name="remaining_spaces" invisible="1"/>
                 </tree>
             </field>
         </record>
